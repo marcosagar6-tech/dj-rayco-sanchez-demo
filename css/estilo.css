@@ -90,6 +90,7 @@ p{margin:0 0 1em}
   .cabecera.cta-a-la-vista .cab-presupuesto{opacity:0;visibility:hidden;transition:opacity .2s,visibility 0s linear .2s}
   .abrir-menu{display:none}
 }
+@media (min-width:1000px) and (max-width:1199px){.menu ul{gap:18px}.menu a{font-size:13.5px}.cabecera .envoltura{gap:22px}}
 /* Sobre la foto de portada, la cabecera lleva un velo suave para que el menú se lea */
 .cabecera::before{content:"";position:absolute;inset:0 0 -24px;z-index:-1;pointer-events:none;background:linear-gradient(rgba(20,21,24,.65),rgba(20,21,24,0));transition:opacity .3s}
 .cabecera.solida::before{opacity:0}
@@ -286,6 +287,42 @@ p{margin:0 0 1em}
 .texto-legal h2:first-child{margin-top:0}
 .texto-legal p{color:var(--gris)}
 
+/* ---------- Diseña tu noche: la curva de energía, como prepara un DJ una sesión ---------- */
+.curva{position:relative;margin:0;padding-bottom:30px}
+.curva svg{display:block;width:100%;height:auto;overflow:visible}
+.curva .rejilla line{stroke:rgba(201,204,210,.1);stroke-width:1}
+.curva .linea{fill:none;stroke:var(--plata);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.curva circle{fill:var(--fondo);stroke:var(--blanco);stroke-width:2}
+.curva-nombres{position:absolute;left:0;right:0;bottom:0;height:22px}
+.curva-nombres span{position:absolute;top:0;transform:translateX(-50%);white-space:nowrap;font:500 10.5px/1.6 var(--etiqueta);letter-spacing:.14em;text-transform:uppercase;color:var(--gris)}
+.curva-nombres span:first-child{transform:none}
+.curva-nombres span:last-child{transform:translateX(-100%)}
+.noche-intro .curva{padding:28px 24px 54px;border:1px solid var(--linea-suave);border-radius:4px;background:var(--fondo2)}
+.noche-intro .curva-nombres{left:24px;right:24px;bottom:22px}
+@media (max-width:599px){.curva-plan .curva-nombres,.curva-muestra .curva-nombres span:nth-child(even){display:none}.curva-plan{padding-bottom:8px}}
+@media (prefers-reduced-motion:no-preference){.curva-plan .linea,.curva-plan .area{transition:d .45s var(--sale)}.curva-plan circle{transition:cy .45s var(--sale),cx .45s var(--sale)}}
+
+.planificador{display:grid;gap:40px;padding-bottom:clamp(96px,10vw,140px)}
+@media (min-width:1000px){.planificador{grid-template-columns:1.25fr .75fr;gap:80px;align-items:start}}
+.plan-bloque{margin:0;padding:32px 0;border:0;border-top:1px solid var(--linea)}
+.plan-bloque:first-child{padding-top:0;border-top:0}
+.plan-t{font-size:clamp(24px,2.4vw,30px);margin-bottom:8px}
+.plan-bloque .nota{margin:0 0 26px}
+.deslizadores{margin-top:18px}
+.deslizador{display:grid;grid-template-columns:1fr auto;align-items:center;gap:4px 16px;padding:12px 0;border-bottom:1px solid var(--linea-suave)}
+.form .deslizador label{margin:0;font:400 17px/1.3 var(--sans);letter-spacing:-.01em;text-transform:none;color:var(--blanco)}
+.deslizador:last-child{border-bottom:0}
+.deslizador output{font:500 11px/1.3 var(--etiqueta);letter-spacing:.2em;text-transform:uppercase;color:var(--plata);text-align:right}
+.deslizador input{grid-column:1/-1;width:100%;height:36px;margin:0;background:transparent;-webkit-appearance:none;appearance:none;cursor:pointer}
+.deslizador input::-webkit-slider-runnable-track{height:2px;background:linear-gradient(90deg,var(--plata) var(--lleno,50%),rgba(201,204,210,.2) var(--lleno,50%))}
+.deslizador input::-moz-range-track{height:2px;background:rgba(201,204,210,.2)}
+.deslizador input::-moz-range-progress{height:2px;background:var(--plata)}
+.deslizador input::-webkit-slider-thumb{-webkit-appearance:none;width:24px;height:24px;margin-top:-11px;border-radius:50%;background:var(--blanco);border:0;box-shadow:0 0 0 6px rgba(201,204,210,.14)}
+.deslizador input::-moz-range-thumb{width:24px;height:24px;border-radius:50%;background:var(--blanco);border:0}
+.deslizador input:focus-visible{outline:2px solid var(--blanco);outline-offset:4px}
+.planificador .vista .boton{width:100%}
+.planificador .vista .enlace{margin-top:16px}
+
 /* ---------- Pie ---------- */
 .pie{border-top:1px solid var(--linea-suave);padding:72px 0 28px;font-size:14.5px}
 .pie .envoltura{display:grid;gap:36px}
@@ -293,7 +330,7 @@ p{margin:0 0 1em}
 .pie-marca img{width:48px;height:48px;border-radius:50%;flex:none}
 .pie-marca p{margin:0;color:var(--gris);max-width:36ch}
 .pie-marca strong{color:var(--blanco)}
-.pie ul{list-style:none;margin:0;padding:0;display:grid;gap:4px}
+.pie ul{list-style:none;margin:0;padding:0;display:grid;gap:4px;align-content:start}
 .pie a,.pie-contacto span{color:var(--gris);text-decoration:none;display:inline-block;padding:3px 0}
 .pie a:hover{color:var(--blanco)}
 .pie .legal{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:6px 24px;padding-top:24px;border-top:1px solid var(--linea-suave);font-size:13px;color:var(--gris)}
