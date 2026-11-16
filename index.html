@@ -31,14 +31,14 @@
 <header class="cabecera">
   <div class="envoltura">
     <a class="marca" href="./" aria-label="DJ Rayco Sánchez, inicio"><img src="img/logo-96.webp" width="36" height="36" alt=""><span>Rayco Sánchez<small>DJ · Tenerife</small></span></a>
-    <nav class="menu" aria-label="Principal"><ul><li><a href="bodas/">Bodas</a></li><li><a href="empresas/">Empresas</a></li><li><a href="fiestas/">Fiestas privadas</a></li><li><a href="sobre-rayco/">Sobre Rayco</a></li><li><a href="preguntas/">Preguntas</a></li><li><a href="tu-musica/">Tu música</a></li></ul></nav>
+    <nav class="menu" aria-label="Principal"><ul><li><a href="bodas/">Bodas</a></li><li><a href="empresas/">Empresas</a></li><li><a href="fiestas/">Fiestas privadas</a></li><li><a href="sobre-rayco/">Sobre Rayco</a></li><li><a href="preguntas/">Preguntas</a></li></ul></nav>
     <a class="boton principal cab-presupuesto" href="contacto/">Pedir presupuesto</a>
     <button class="abrir-menu" type="button" aria-expanded="false" aria-controls="menu-movil"><span>Menú</span><i aria-hidden="true"></i></button>
   </div>
 </header>
 <div class="menu-movil" id="menu-movil" role="dialog" aria-modal="true" aria-label="Menú" aria-hidden="true" inert>
   <div class="arriba"><a class="marca" href="./" aria-label="DJ Rayco Sánchez, inicio"><img src="img/logo-96.webp" width="36" height="36" alt=""><span>Rayco Sánchez<small>DJ · Tenerife</small></span></a><button class="cerrar" type="button" aria-label="Cerrar menú"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
-  <nav aria-label="Menú del móvil"><ul><li><a href="./" aria-current="page">Inicio</a></li><li><a href="bodas/">Bodas</a></li><li><a href="empresas/">Eventos de empresa</a></li><li><a href="fiestas/">Fiestas privadas</a></li><li><a href="sobre-rayco/">Sobre Rayco</a></li><li><a href="preguntas/">Preguntas</a></li><li><a href="tu-musica/">Diseña tu noche</a></li><li><a href="contacto/">Contacto</a></li></ul></nav>
+  <nav aria-label="Menú del móvil"><ul><li><a href="./" aria-current="page">Inicio</a></li><li><a href="bodas/">Bodas</a></li><li><a href="empresas/">Eventos de empresa</a></li><li><a href="fiestas/">Fiestas privadas</a></li><li><a href="sobre-rayco/">Sobre Rayco</a></li><li><a href="preguntas/">Preguntas</a></li><li><a href="contacto/">Contacto</a></li></ul></nav>
   <div class="pie-menu">
     <a class="boton principal" href="contacto/">Pedir presupuesto</a>
     <p>o llama al <a href="tel:+34657531818">657 53 18 18</a></p>
@@ -47,20 +47,25 @@
 <main id="contenido">
 <section class="portada" aria-labelledby="t-portada">
   <figure class="foto-portada"><img src="img/rayco-sonriendo-960.webp" srcset="img/rayco-sonriendo-640.webp 640w, img/rayco-sonriendo-960.webp 960w, img/rayco-sonriendo-1280.webp 1280w, img/rayco-sonriendo-1600.webp 1600w" sizes="(min-width:1000px) 50vw, 142vw" width="1600" height="2000" alt="Rayco Sánchez sonríe con auriculares frente a su equipo de música" fetchpriority="high"></figure>
+  <div class="sello" aria-hidden="true"><svg viewBox="0 0 200 200"><defs><path id="sello-circulo" d="M100,100 m-80,0 a80,80 0 1,1 160,0 a80,80 0 1,1 -160,0"/></defs><text><textPath href="#sello-circulo" textLength="500" lengthAdjust="spacing">DJ · SPEAKER · ANIMADOR · TENERIFE · +25 AÑOS · </textPath></text></svg><img src="img/logo-192.webp" width="96" height="96" alt=""></div>
   <div class="portada-texto entra">
     <p class="ante">DJ · Speaker · Animador</p>
     <h1 id="t-portada">DJ para bodas, eventos y <em>fiestas privadas</em></h1>
-    <p class="entradilla">Más de 25 años poniendo la música en celebraciones de Tenerife. Tú disfrutas; de la música me ocupo yo.</p>
+    <p class="entradilla">Más de 25 años poniendo la música en celebraciones de Tenerife.</p>
     <a class="boton principal" href="contacto/" data-cta>Pedir presupuesto</a>
   </div>
 </section>
 
-<section class="cifras" aria-label="Rayco en pocas palabras">
+<section class="credenciales" aria-label="Experiencia de Rayco">
   <div class="envoltura">
-    <ul>
-      <li><strong>+25 años</strong><span>como DJ en todo tipo de celebraciones</span></li>
-      <li><strong>DJ y speaker</strong><span>música, presentación y animación</span></li>
-      <li><strong>Equipo propio</strong><span>llevo mi propio equipo de sonido</span></li>
+    <div class="cifra-grande revela">
+      <p class="num" aria-hidden="true">25<sup>+</sup></p>
+      <p class="cifra-texto"><strong>Más de 25 años de experiencia</strong> poniendo la música en bodas, cumpleaños, cenas de empresa, fiestas privadas y fines de año.</p>
+    </div>
+    <ul class="cred-lista revela">
+      <li><strong>DJ</strong><span>La música de cada momento, preparada contigo.</span></li>
+      <li><strong>Speaker y animador</strong><span>Presenta, anima y lleva el ritmo del evento.</span></li>
+      <li><strong>Equipo propio</strong><span>Lleva su propio equipo de sonido.</span></li>
     </ul>
   </div>
 </section>
@@ -69,18 +74,6 @@
   <div class="envoltura">
     <div class="titulo-seccion"><p class="ante">Servicios</p><h2 id="t-servicios">Qué puedo hacer por tu <em>celebración</em></h2></div>
     <ul class="servicios"><li class="revela"><a href="bodas/"><h3>Bodas</h3><p>Música pensada con vosotros, de la ceremonia al último baile.</p><span class="ir"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li><li class="revela"><a href="empresas/"><h3>Cenas y eventos de empresa</h3><p>Cenas de empresa, presentaciones y fiestas, con música y presentación cuidadas.</p><span class="ir"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li><li class="revela"><a href="fiestas/"><h3>Cumpleaños y fiestas privadas</h3><p>Cumpleaños, fin de año y celebraciones en casa o en un local.</p><span class="ir"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li><li class="revela"><a href="fiestas/"><h3>Fin de año</h3><p>Para despedir el año con la música y el ambiente preparados.</p><span class="ir"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li><li class="revela"><a href="sobre-rayco/"><h3>Speaker y animación</h3><p>Presenta, anima y mantiene el ritmo del evento cuando hace falta.</p><span class="ir"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li><li class="revela"><a href="sobre-rayco/"><h3>Gestión de eventos</h3><p>Ayuda a organizar los tiempos para que todo salga a su hora.</p><span class="ir"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li></ul>
-  </div>
-</section>
-
-<section class="seccion" aria-labelledby="t-noche">
-  <div class="envoltura dos-col noche-intro">
-    <div class="revela">
-      <p class="ante">Diseña tu noche</p>
-      <h2 id="t-noche">Dibuja cómo quieres que <em>suene tu fiesta</em></h2>
-      <p class="entradilla">Elige los momentos de tu celebración, marca la energía de cada uno y lo que os gusta. Rayco recibe tu idea de la noche por WhatsApp, como la prepararía para una sesión.</p>
-      <a class="enlace" href="tu-musica/">Diseñar mi noche <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-    </div>
-    <div class="revela"><figure class="curva curva-muestra" aria-hidden="true"><svg viewBox="0 0 600 220"><defs><linearGradient id="relleno-curva-muestra" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c9ccd2" stop-opacity=".24"/><stop offset="1" stop-color="#c9ccd2" stop-opacity="0"/></linearGradient></defs><g class="rejilla"><line x1="0" x2="600" y1="192.0" y2="192.0"/><line x1="0" x2="600" y1="151.0" y2="151.0"/><line x1="0" x2="600" y1="110.0" y2="110.0"/><line x1="0" x2="600" y1="69.0" y2="69.0"/><line x1="0" x2="600" y1="28.0" y2="28.0"/></g><path class="area" fill="url(#relleno-curva-muestra)" d="M28.0,192.0 C50.7,185.2 118.7,157.8 164.0,151.0 C209.3,144.2 254.7,157.8 300.0,151.0 C345.3,144.2 390.7,130.5 436.0,110.0 C481.3,89.5 549.3,41.7 572.0,28.0 L572.0,192 L28.0,192 Z"/><path class="linea" d="M28.0,192.0 C50.7,185.2 118.7,157.8 164.0,151.0 C209.3,144.2 254.7,157.8 300.0,151.0 C345.3,144.2 390.7,130.5 436.0,110.0 C481.3,89.5 549.3,41.7 572.0,28.0"/><g class="puntos"><circle cx="28.0" cy="192.0" r="6"/><circle cx="164.0" cy="151.0" r="6"/><circle cx="300.0" cy="151.0" r="6"/><circle cx="436.0" cy="110.0" r="6"/><circle cx="572.0" cy="28.0" r="6"/></g></svg><div class="curva-nombres"><span style="left:4.67%">Ceremonia</span><span style="left:27.33%">Cóctel</span><span style="left:50.00%">Cena</span><span style="left:72.67%">Primer baile</span><span style="left:95.33%">Barra libre</span></div></figure></div>
   </div>
 </section>
 
@@ -94,6 +87,12 @@
       <p class="entradilla">Esa experiencia es la que lleva a tu celebración: saber leer a la gente y qué canción toca en cada momento.</p>
       <a class="enlace" href="sobre-rayco/">Conoce a Rayco <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     </div>
+  </div>
+</section>
+
+<section class="cita" aria-label="Forma de trabajar">
+  <div class="envoltura estrecha revela">
+    <p>Tú disfrutas; de la música <em>me ocupo yo</em>.</p>
   </div>
 </section>
 
@@ -129,7 +128,7 @@
       <img src="img/logo-96.webp" width="48" height="48" alt="Logo de DJ Rayco Sánchez" loading="lazy">
       <p><strong>DJ Rayco Sánchez</strong><br>DJ, speaker y animador para bodas, eventos de empresa y fiestas privadas en Tenerife.</p>
     </div>
-    <nav aria-label="Pie"><ul><li><a href="bodas/">Bodas</a></li><li><a href="empresas/">Eventos de empresa</a></li><li><a href="fiestas/">Fiestas privadas</a></li><li><a href="sobre-rayco/">Sobre Rayco</a></li><li><a href="preguntas/">Preguntas</a></li><li><a href="tu-musica/">Diseña tu noche</a></li><li><a href="contacto/">Contacto</a></li></ul></nav>
+    <nav aria-label="Pie"><ul><li><a href="bodas/">Bodas</a></li><li><a href="empresas/">Eventos de empresa</a></li><li><a href="fiestas/">Fiestas privadas</a></li><li><a href="sobre-rayco/">Sobre Rayco</a></li><li><a href="preguntas/">Preguntas</a></li><li><a href="contacto/">Contacto</a></li></ul></nav>
     <ul class="pie-contacto">
       <li><a href="tel:+34657531818">657 53 18 18</a></li>
       <li><a href="https://wa.me/34657531818?text=Hola%2C%20Rayco.%20Quiero%20pedir%20presupuesto%20para%20mi%20evento." target="_blank" rel="noopener">WhatsApp</a></li>
