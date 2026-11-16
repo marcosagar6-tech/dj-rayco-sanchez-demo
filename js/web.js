@@ -1,7 +1,10 @@
-// DJ Rayco Sánchez · comportamiento de la web (sin librerías)
+// DJ Rayco Sánchez · comportamiento de la web, versión 5 (elegante y simple) (sin librerías)
+// Si algo falla o la persona pide reducir el movimiento, la web se ve entera y quieta.
 (function () {
   var TEL = '34657531818';
   var d = document;
+  var quieto = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var hayIO = 'IntersectionObserver' in window;
 
   // Menú del móvil
   var menu = d.getElementById('menu-movil');
@@ -23,36 +26,36 @@
     menu.addEventListener('click', function (e) { if (e.target.closest('a')) { d.body.style.overflow = ''; } });
   }
 
-  // La cabecera se vuelve sólida al bajar de la foto de portada
+  // Una sola acción principal por pantalla: si se ve un botón de presupuesto del contenido,
+  // se esconden la barra del móvil y el botón de la cabecera del ordenador.
   var cab = d.querySelector('.cabecera');
-  var pendiente = false;
-  var medir = function () {
-    pendiente = false;
-    if (cab) cab.classList.toggle('solida', window.scrollY > 40);
-  };
-  window.addEventListener('scroll', function () { if (!pendiente) { pendiente = true; requestAnimationFrame(medir); } }, { passive: true });
-  medir();
-
-  // Aparición suave al bajar (solo un grupo por página, solo ordenador; el CSS decide)
-  var aparecen = d.querySelectorAll('.aparece');
-  if (aparecen.length && 'IntersectionObserver' in window) {
-    var io = new IntersectionObserver(function (es) {
-      es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('visto'); io.unobserve(e.target); } });
-    }, { rootMargin: '0px 0px -10% 0px' });
-    aparecen.forEach(function (el) { io.observe(el); });
-  } else { aparecen.forEach(function (el) { el.classList.add('visto'); }); }
-
-  // Móvil: la acción fija de abajo se esconde mientras se ve otro botón de presupuesto (una sola acción por pantalla)
   var accion = d.querySelector('.accion-fija');
   var ctas = d.querySelectorAll('[data-cta]');
-  if (accion && ctas.length && 'IntersectionObserver' in window) {
+  if (ctas.length && hayIO) {
     var vistos = new Set();
     var io2 = new IntersectionObserver(function (es) {
       es.forEach(function (e) { if (e.isIntersecting) vistos.add(e.target); else vistos.delete(e.target); });
-      accion.classList.toggle('escondida', vistos.size > 0);
+      var hay = vistos.size > 0;
+      if (accion) accion.classList.toggle('escondida', hay);
+      if (cab) cab.classList.toggle('cta-a-la-vista', hay);
     }, { threshold: 0.6 });
     ctas.forEach(function (el) { io2.observe(el); });
   }
+
+  // Revelados al bajar
+  var revelan = d.querySelectorAll('.revela, .revela-foto');
+  if (revelan.length && hayIO && !quieto) {
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('visto'); io.unobserve(e.target); } });
+    }, { rootMargin: '0px 0px -8% 0px' });
+    revelan.forEach(function (el) { io.observe(el); });
+  } else { revelan.forEach(function (el) { el.classList.add('visto'); }); }
+
+  // La cabecera se vuelve sólida al bajar
+  var pendiente = false;
+  var medir = function () { pendiente = false; if (cab) cab.classList.toggle('solida', window.scrollY > 40); };
+  window.addEventListener('scroll', function () { if (!pendiente) { pendiente = true; requestAnimationFrame(medir); } }, { passive: true });
+  medir();
 
   // Formulario de contacto: prepara el mensaje de WhatsApp
   var form = d.getElementById('form-contacto');
@@ -65,14 +68,14 @@
 
   // Si vienes desde Bodas, Empresas o Fiestas, el tipo ya viene marcado
   var tipo = new URLSearchParams(location.search).get('tipo');
-  if (tipo) { var r = form.querySelector('input[name="tipo"][value="' + tipo + '"]'); if (r) r.checked = true; }
+  if (tipo) { var rt = form.querySelector('input[name="tipo"][value="' + tipo + '"]'); if (rt) rt.checked = true; }
 
   var valor = function (n) { var el = form.elements[n]; return el ? String(el.value || '').trim() : ''; };
   var fechaBonita = function (v) {
     if (!/^\d{4}-\d{2}-\d{2}$/.test(v)) return v;
     var p = v.split('-'); return p[2] + '/' + p[1] + '/' + p[0];
   };
-  var nombresTipo = { boda: 'Boda', empresa: 'Evento de empresa', fiesta: 'Fiesta privada', otro: 'Otra celebración' };
+  var nombresTipo = { boda: 'Boda', empresa: 'Evento de empresa', fiesta: 'Cumpleaños o fiesta privada', finano: 'Fin de año', otro: 'Otra celebración' };
 
   var mensaje = function () {
     var t = form.querySelector('input[name="tipo"]:checked');
